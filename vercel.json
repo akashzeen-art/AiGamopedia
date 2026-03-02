@@ -2,7 +2,6 @@
   "installCommand": "echo 'Skip install'",
   "buildCommand": "sh scripts/vercel-build.sh",
   "outputDirectory": ".vercel/output/static",
-  "framework": "other",
   "rewrites": [
     { "source": "/ar", "destination": "/index.html" },
     { "source": "/ar/", "destination": "/index.html" },
