@@ -1,0 +1,13 @@
+{
+  "buildCommand": "echo 'Static site'",
+  "outputDirectory": ".",
+  "rewrites": [
+    { "source": "/ar", "destination": "/index.html" },
+    { "source": "/ar/", "destination": "/index.html" },
+    { "source": "/ar/index.html", "destination": "/index.html" },
+    { "source": "/ar/moreGames.html", "destination": "/moreGames.html" },
+    { "source": "/ar/myAccount.html", "destination": "/myAccount.html" },
+    { "source": "/ar/termsAndConditions.html", "destination": "/termsAndConditions.html" },
+    { "source": "/ar/(.*)", "destination": "/$1" }
+  ]
+}

@@ -43,7 +43,24 @@ No extra Netlify config needed; just connect the repo and deploy.
 
 ---
 
-## 3. Routes your backend must support
+## 3. Deploy on Vercel
+
+The repo includes **`vercel.json`** so `/ar` (Arabic) works on Vercel (no 404).
+
+1. **Import the project** at [vercel.com/new](https://vercel.com/new): connect your Git repo (e.g. GitHub `akashzeen-art/AiGamopedia`).
+2. **Fix "Not Found":** In **Project Settings → General → Build & Development Settings** set:
+   - **Framework Preset:** `Other` (so Vercel does not treat it as a Node server).
+   - **Build Command:** leave empty, or keep the override from `vercel.json` (`echo 'Static site'`).
+   - **Output Directory:** `.` (dot) so the repo root is served as static files.
+3. **Redeploy** (Deployments → … → Redeploy). Then:
+   - **English:** `https://your-project.vercel.app/`
+   - **Arabic:** `https://your-project.vercel.app/ar`
+
+The `vercel.json` rewrites send `/ar` and `/ar/*` to the correct HTML or static files so the URL stays `/ar`.
+
+---
+
+## 4. Routes your backend must support
 
 If you **don’t** use this Node server and instead serve the built files (e.g. from Nginx/Apache/CDN), replicate this behaviour:
 
@@ -64,7 +81,7 @@ So: **under `/ar`, map “virtual” paths to the same physical files as at root
 
 ---
 
-## 4. File layout to deploy
+## 5. File layout to deploy
 
 Deploy the whole project **except** `node_modules` (and any `.env` if you add it). Backend only needs to run `npm install` and `npm start` if using the Node server.
 
@@ -78,11 +95,12 @@ Deploy the whole project **except** `node_modules` (and any `.env` if you add it
 - `style.css`
 - `images/`, `icons/`, `audios/` (and any other assets)
 - `image.png`, `manifest.webmanifest`
+- **Netlify:** `_redirects`, `netlify.toml`. **Vercel:** `vercel.json`.
 - Optional: `DEPLOYMENT.md`, `README.md`, `.gitignore`
 
 ---
 
-## 5. Environment variables
+## 6. Environment variables
 
 | Variable     | Required | Default | Description |
 |-------------|----------|---------|-------------|
@@ -105,7 +123,7 @@ npm start
 
 ---
 
-## 6. If /ar is not working
+## 7. If /ar is not working
 
 **Common causes:**
 
@@ -162,7 +180,7 @@ Then English is at `https://example.com/portal/` and Arabic at `https://example.
 
 ---
 
-## 7. Production checklist
+## 8. Production checklist
 
 - [ ] Run `npm install --production` (or `npm ci`) on the server.
 - [ ] Set `PORT` to your actual port (e.g. 80/443 behind reverse proxy).
@@ -172,7 +190,7 @@ Then English is at `https://example.com/portal/` and Arabic at `https://example.
 
 ---
 
-## 8. Quick test after deploy
+## 9. Quick test after deploy
 
 ```bash
 curl -s -o /dev/null -w "%{http_code}" http://localhost:5500/
