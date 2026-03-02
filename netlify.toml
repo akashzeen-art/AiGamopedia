@@ -1,0 +1,41 @@
+# AIGamopedia – Netlify config
+# Publish the current directory (no build step)
+[build]
+  publish = "."
+
+# Rewrites so /ar (Arabic) and /ar/* work without 404
+[[redirects]]
+  from = "/ar"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/ar/"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/ar/index.html"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/ar/moreGames.html"
+  to = "/moreGames.html"
+  status = 200
+
+[[redirects]]
+  from = "/ar/myAccount.html"
+  to = "/myAccount.html"
+  status = 200
+
+[[redirects]]
+  from = "/ar/termsAndConditions.html"
+  to = "/termsAndConditions.html"
+  status = 200
+
+# /ar/* assets (index.js, style.css, images/...) → serve from root
+[[redirects]]
+  from = "/ar/*"
+  to = "/:splat"
+  status = 200

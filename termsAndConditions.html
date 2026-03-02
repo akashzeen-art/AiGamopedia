@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>AIGamopedia</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="msapplication-TileColor" content="#303E50">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="author" content="AIGamopedia">
+    <meta name="description" content="AIGamopedia">
+    <meta name="keywords" content="AIGamopedia">
+    <meta name="theme-color" content="#000000">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="icon" href="./images/favicon/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./images/favicon/apple-touch-icon.png">
+    <link rel="manifest" href="./manifest.webmanifest">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&family=Playfair+Display&family=Roboto+Slab&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="./i18n/en.js"></script>
+    <script src="./i18n/ar.js"></script>
+    <script src="./i18n.js"></script>
+    <script type="module" src="./index.js"></script>
+  </head>
+  <body>
+    <canvas class="webgl"></canvas>
+    <nav style="display: flex; justify-content: space-between; align-items: center; gap: 50px;">
+      <a class="logo" href="./index.html" aria-label="website logo">
+        <img src="./image.png" alt="AIGamopedia logo" style="height: 80px; width: auto;" data-i18n-alt="logoAlt">
+      </a>
+      <div class="navBig">
+        <a href="./index.html" class="navEach" id="navLink1" aria-label="about nav" data-i18n="navHome">Home</a>
+        <a href="./moreGames.html" class="navEach" id="navLink2" aria-label="more games nav" data-i18n="navMoreGames">More Games</a>
+        <a href="./myAccount.html" class="navEach" id="navLink3" aria-label="account nav" data-i18n="navMyAccount">My Account</a>
+        <a href="./termsAndConditions.html" class="navEach" id="navLink4" aria-label="t&c nav" data-i18n="navTC">T & C</a>
+      </div>
+      <div class="navSmall">
+        <div class="hamburger">
+          <span class="line" style="background-color: beige;"></span>
+          <span class="line" style="background-color: beige;"></span>
+          <span class="line" style="background-color: beige;"></span>
+          <span class="line" style="background-color: beige;"></span>
+        </div>
+        <div class="subMenu">
+          <a href="./index.html" class="navEach" id="navLink5" aria-label="about nav" data-i18n="navHome">Home</a>
+          <a href="./moreGames.html" class="navEach" id="navLink6" aria-label="more games nav" data-i18n="navMoreGames">More Games</a>
+          <a href="./myAccount.html" class="navEach" id="navLink7" aria-label="account nav" data-i18n="navMyAccount">My Account</a>
+          <a href="./termsAndConditions.html" class="navEach" id="navLink8" aria-label="t&c nav" data-i18n="navTC">T & C</a>
+        </div>
+      </div>
+    </nav>
+    <main>
+      <section id="section2">
+        <div class="sec2Part content1" data-i18n="tcTitle">
+          Terms & Conditions
+        </div>
+        <div class="sec2Part content3">
+          <ul>
+            <li data-i18n="tc1">After the unsubscription of the Daily package, the portal content can be accessed even after 24 hours.</li>
+            </br>   
+            <li data-i18n="tc2">Data charges would apply for browsing & downloading contents on this portal.</li>
+            </br>
+            <li data-i18n="tc3">Contents are compatible with all handsets.</li>
+            </br>
+            <li data-i18n="tc4">To make use of this service, one must be more than 18 years old or have received permission from your parents or person who is authorized to pay your mobile bill.</li>
+            </br>
+            <li data-i18n="tc5">To unsubscribe the Service log into my account and click on unsubscribe.</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="copyright">
+        Copyright &copy;
+        <span id="copyright_year">
+          <script>document.getElementById('copyright_year').appendChild(document.createTextNode(new Date().getFullYear()))</script>
+        </span>
+        <span data-i18n="copyright">All Rights Reserved by</span>
+        <a class="copyright_link" href="https://www.linkedin.com/in/hovinhthanh7893/" target="_blank" aria-label="to linkedin">Ho Vinh Thanh</a>
+      </div>
+      <div class="endPage">
+        <button class="sound" id="soundButton" aria-label="toggle sound"></button>
+        <a href="#section1" class="backToTop" aria-label="to section 1"></a>
+      </div>
+      <a href="#section1" class="moveUp" aria-label="scroll to top"></a>
+    </footer>
+  </body>
+</html>

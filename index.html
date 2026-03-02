@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>AIGamopedia</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="msapplication-TileColor" content="#303E50">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="author" content="AIGamopedia">
+    <meta name="description" content="AIGamopedia">
+    <meta name="keywords" content="AIGamopedia">
+    <meta name="theme-color" content="#000000">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="icon" href="./images/favicon/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./images/favicon/apple-touch-icon.png">
+    <link rel="manifest" href="./manifest.webmanifest">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&family=Playfair+Display&family=Roboto+Slab&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="./i18n/en.js"></script>
+    <script src="./i18n/ar.js"></script>
+    <script src="./i18n.js"></script>
+    <script type="module" src="./index.js"></script>
+  </head>
+  <body>
+    <canvas class="webgl"></canvas>
+    <nav style="display: flex; justify-content: space-between; align-items: center; gap: 50px;">
+      <a class="logo" href="#section1" aria-label="website logo">
+        <img src="./image.png" alt="AIGamopedia logo" style="height: 80px; width: auto;" data-i18n-alt="logoAlt">
+      </a>
+      <div class="navBig">
+        <a href="./index.html" class="navEach" id="navLink1" aria-label="about nav" data-i18n="navHome">Home</a>
+        <a href="./moreGames.html" class="navEach" id="navLink2" aria-label="more games nav" data-i18n="navMoreGames">More Games</a>
+        <a href="./myAccount.html" class="navEach" id="navLink3" aria-label="account nav" data-i18n="navMyAccount">My Account</a>
+        <a href="./termsAndConditions.html" class="navEach" id="navLink4" aria-label="t&c nav" data-i18n="navTC">T & C</a>
+      </div>
+      <div class="navSmall">
+        <div class="hamburger">
+          <span class="line"></span>
+          <span class="line"></span>
+          <span class="line"></span>
+          <span class="line"></span>
+        </div>
+        <div class="subMenu">
+          <a href="./index.html" class="navEach" id="navLink5" aria-label="about nav" data-i18n="navHome">Home</a>
+          <a href="./moreGames.html" class="navEach" id="navLink6" aria-label="more games nav" data-i18n="navMoreGames">More Games</a>
+          <a href="./myAccount.html" class="navEach" id="navLink7" aria-label="account nav" data-i18n="navMyAccount">My Account</a>
+          <a href="./termsAndConditions.html" class="navEach" id="navLink8" aria-label="t&c nav" data-i18n="navTC">T & C</a>
+        </div>
+    </nav>
+    <div id="game-overlay" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:#000;z-index:9999;flex-direction:column;">
+      <button id="close-game" style="position:absolute;top:20px;right:20px;z-index:10000;padding:10px 20px;background:#ffc800;border:none;border-radius:5px;cursor:pointer;font-size:16px;font-weight:bold;" data-i18n="backToPortal">← Back to Portal</button>
+      <iframe id="game-iframe" style="width:100%;height:100%;border:none;"></iframe>
+    </div>
+    <main>
+      <section id="section1">
+        <div class="sec1Tit content1" data-i18n="sec1Tagline">Game On, Always</div>
+        <div class="sec1Name content1"></div>
+        <div class="sec1Des content2" data-i18n="sec1Des">Level Up Your Game Discovery</div>
+        <a href="#section2" class="nextButton1 content3" aria-label="to section 2">
+          <span class="next"></span>
+          <span class="next"></span>
+          <span class="next"></span>
+        </a>
+      </section>
+      <section id="section2">
+        <div class="sec2Part content1" data-i18n="sec2NewGames">
+          New Games
+        </div>
+        <div class="lineSec2 content2"></div>
+        <div class="sec2Part content3">
+          <div class="skill" id="skill">
+          </div>
+        </div>
+        <div class="lineSec2 content4"></div>
+        <a href="#section3" class="nextButton2 content6" aria-label="to section 3">
+          <span class="next"></span>
+          <span class="next"></span>
+          <span class="next"></span>
+        </a>
+      </section>
+
+
+      <section id="section3">
+        <div class="secPortTit content1" data-i18n="sec3Title">Browse By Genre</div>
+        <div class="secPortDes content2" data-i18n="sec3Des">Dive into genres that match your play style...</div>
+        <div class="secPortFrame content3">
+          <button class="leftright" id="prevGameButton" aria-label="to previous game"></button>
+          <button class="leftright" id="nextGameButton" aria-label="to previous next"></button>
+          <div class="wrapper" id="gameWrapper">
+            <div class="project gameProject">
+              <div class="projectTitle" data-i18n="genreTop10">Top 10</div>
+              <div class="projectImage">
+                <div class="imageWrap">
+                  <img class="picture" src="./images/top2.jpeg" alt="Gouden eeuw 2">
+                </div>
+              </div>
+              <!-- <div class="imgIndex">
+                <div class="imgButton prevImg"></div>
+                <div class="dotGroup">
+                  <div class="dotImg is-focus"></div>
+                </div>
+                <div class="imgButton nextImg"></div>
+              </div> -->
+              <div class="projectSecret" id="secret1"></div>
+              <div class="projectDes">
+                <a class="seemoreButton" href="#" data-target="category-top-10-games" aria-label="to gouden eeuw trailer">
+                  <div class="seemore" data-i18n="exploreGames">&lt; Explore games &gt;</div>
+                </a>
+              </div>
+            </div>
+            <div class="project gameProject">
+              <div class="projectTitle" data-i18n="genreVIP">VIP</div>
+              <div class="projectImage">
+                <div class="imageWrap">
+                  <img class="picture" src="./images/vip11.jpeg" alt="Gouden eeuw 1">
+                  <!-- <img class="picture" src="./images/vip22.jpeg" alt="Gouden eeuw 6"> -->
+                </div>
+              </div>
+              <!-- <div class="imgIndex">
+                <div class="imgButton prevImg"></div>
+                <div class="dotGroup">
+                  <div class="dotImg is-focus"></div>
+                  <div class="dotImg"></div>
+                  <div class="dotImg"></div>
+                  <div class="dotImg"></div>
+                  <div class="dotImg"></div>
+                  <div class="dotImg"></div>
+                </div>
+                <div class="imgButton nextImg"></div>
+              </div> -->
+              <div class="projectSecret" id="secret2"></div>
+              <div class="projectDes">
+                <a class="seemoreButton" href="#" data-target="category-vip-games" aria-label="to gouden eeuw trailer">
+                  <div class="seemore" data-i18n="exploreGames">&lt; Explore games &gt;</div>
+                </a>
+              </div>
+            </div>
+            <div class="project gameProject">
+              <div class="projectTitle" data-i18n="genreLeaderboard">Games with Leaderboard</div>
+              <div class="projectImage">
+                <div class="imageWrap">
+                  <img class="picture" src="./images/leaderboard.jpeg" alt="Indiana aardewerk 1">
+                  <!-- <img class="picture" src="./images/leaderboard22.jpeg" alt="Indiana aardewerk 5"> -->
+                </div>
+              </div>
+              <!-- <div class="imgIndex">
+                <div class="imgButton prevImg"></div>
+                <div class="dotGroup">
+                  <div class="dotImg is-focus"></div>
+                  <div class="dotImg"></div>
+                  <div class="dotImg"></div>
+                  <div class="dotImg"></div>
+                  <div class="dotImg"></div>
+                </div>
+                <div class="imgButton nextImg"></div>
+              </div> -->
+              <div class="projectSecret" id="secret3"></div>
+              <div class="projectDes">
+                <a class="seemoreButton" href="#" data-target="category-games-with-leaderboard" aria-label="to play indiana aardewerk">
+                  <div class="seemore" data-i18n="exploreGames">&lt; Explore games &gt;</div>
+                </a>
+              </div>
+            </div>
+            <div class="project gameProject">
+              <div class="projectTitle" data-i18n="genreTrainBrain">Train your Brain</div>
+              <div class="projectImage">
+                <div class="imageWrap">
+                  <img class="picture" src="./images/brain11.jpeg" alt="Wijnbroeders 1">
+                  <!-- <img class="picture" src="./images/brain2.jpeg" alt="Wijnbroeders 2"> -->
+                </div>
+              </div>
+              <!-- <div class="imgIndex">
+                <div class="imgButton prevImg"></div>
+                <div class="dotGroup">
+                  <div class="dotImg is-focus"></div>
+                  <div class="dotImg"></div>
+                  <div class="dotImg"></div>
+                  <div class="dotImg"></div>
+                </div>
+                <div class="imgButton nextImg"></div>
+              </div> -->
+              <div class="projectSecret" id="secret4"></div>
+              <div class="projectDes">
+                <a class="seemoreButton" href="#" data-target="category-train-your-brain" aria-label="to wijnbroeders trailer">
+                  <div class="seemore" data-i18n="exploreGames">&lt; Explore games &gt;</div>
+                </a>
+              </div>
+            </div>
+            <div class="project gameProject">
+              <div class="projectTitle" data-i18n="genreSoothing">Soothing</div>
+              <div class="projectImage">
+                <div class="imageWrap">
+                  <img class="picture" src="./images/soothing.jpeg" alt="Wijnbroeders 1">
+                  <!-- <img class="picture" src="./images/soothing2.jpeg" alt="Wijnbroeders 4"> -->
+                </div>
+              </div>
+              <!-- <div class="imgIndex">
+                <div class="imgButton prevImg"></div>
+                <div class="dotGroup">
+                  <div class="dotImg is-focus"></div>
+                  <div class="dotImg"></div>
+                  <div class="dotImg"></div>
+                  <div class="dotImg"></div>
+                </div>
+                <div class="imgButton nextImg"></div>
+              </div> -->
+              <div class="projectSecret" id="secret5"></div>
+              <div class="projectDes">
+                <a class="seemoreButton" href="#" data-target="category-soothing" aria-label="to wijnbroeders trailer">
+                  <div class="seemore" data-i18n="exploreGames">&lt; Explore games &gt;</div>
+                </a>
+              </div>
+            </div>
+            <div class="project gameProject">
+              <div class="projectTitle" data-i18n="genreQuickBreak">Quick break</div>
+              <div class="projectImage">
+                <div class="imageWrap">
+                  <img class="picture" src="./images/break.jpeg" alt="Wijnbroeders 1">
+                  <!-- <img class="picture" src="./images/break2.jpeg" alt="Wijnbroeders 4"> -->
+                </div>
+              </div>
+              <!-- <div class="imgIndex">
+                <div class="imgButton prevImg"></div>
+                <div class="dotGroup">
+                  <div class="dotImg is-focus"></div>
+                  <div class="dotImg"></div>
+                  <div class="dotImg"></div>
+                  <div class="dotImg"></div>
+                </div>
+                <div class="imgButton nextImg"></div>
+              </div> -->
+              <div class="projectSecret" id="secret6"></div>
+              <div class="projectDes">
+                <a class="seemoreButton" href="#" data-target="category-quick-break-at-work" aria-label="to wijnbroeders trailer">
+                  <div class="seemore" data-i18n="exploreGames">&lt; Explore games &gt;</div>
+                </a>
+              </div>
+            </div>
+            <div class="project gameProject">
+              <div class="projectTitle" data-i18n="genreSports">Sports</div>
+              <div class="projectImage">
+                <div class="imageWrap">
+                  <img class="picture" src="./images/sports.jpeg" alt="Wijnbroeders 1">
+                  <!-- <img class="picture" src="./images/sports2.jpeg" alt="Wijnbroeders 4"> -->
+                </div>
+              </div>
+              <!-- <div class="imgIndex">
+                <div class="imgButton prevImg"></div>
+                <div class="dotGroup">
+                  <div class="dotImg is-focus"></div>
+                  <div class="dotImg"></div>
+                  <div class="dotImg"></div>
+                  <div class="dotImg"></div>
+                </div>
+                <div class="imgButton nextImg"></div>
+              </div> -->
+              <div class="projectSecret" id="secret7"></div>
+              <div class="projectDes">
+                <a class="seemoreButton" href="#" data-target="category-sports" aria-label="to wijnbroeders trailer">
+                  <div class="seemore" data-i18n="exploreGames">&lt; Explore games &gt;</div>
+                </a>
+              </div>
+            </div>
+            <div class="project gameProject">
+              <div class="projectTitle" data-i18n="genreMultiplayer">Multiplayer</div>
+              <div class="projectImage">
+                <div class="imageWrap">
+                  <img class="picture" src="./images/multiplayer.jpeg" alt="Wijnbroeders 1">
+                  <!-- <img class="picture" src="./images/multiplayer2.jpeg" alt="Wijnbroeders 4"> -->
+                </div>
+              </div>
+              <!-- <div class="imgIndex">
+                <div class="imgButton prevImg"></div>
+                <div class="dotGroup">
+                  <div class="dotImg is-focus"></div>
+                  <div class="dotImg"></div>
+                  <div class="dotImg"></div>
+                  <div class="dotImg"></div>
+                </div>
+                <div class="imgButton nextImg"></div>
+              </div> -->
+              <div class="projectSecret" id="secret8"></div>
+              <div class="projectDes">
+                <a class="seemoreButton" href="#" data-target="category-multiplayer" aria-label="to wijnbroeders trailer">
+                  <div class="seemore" data-i18n="exploreGames">&lt; Explore games &gt;</div>
+                </a>
+              </div>
+            </div>
+            <div class="project gameProject">
+              <div class="projectTitle" data-i18n="genreAllGames">All Games</div>
+              <div class="projectImage">
+                <div class="imageWrap">
+                  <img class="picture" src="./images/break2.jpeg" alt="Wijnbroeders 1">
+                  <!-- <img class="picture" src="./images/vip2.jpeg" alt="Wijnbroeders 2"> -->
+                </div>
+              </div>
+              <!-- <div class="imgIndex">
+                <div class="imgButton prevImg"></div>
+                <div class="dotGroup">
+                  <div class="dotImg is-focus"></div>
+                  <div class="dotImg"></div>
+                  <div class="dotImg"></div>
+                  <div class="dotImg"></div>
+                </div>
+                <div class="imgButton nextImg"></div>
+              </div> -->
+              <div class="projectSecret" id="secret9"></div>
+              <div class="projectDes">
+                <a class="seemoreButton" href="#" data-target="category-all-games" aria-label="to wijnbroeders trailer">
+                  <div class="seemore" data-i18n="exploreGames">&lt; Explore games &gt;</div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="dotIndex">
+            <div class="dot dotGame"></div>
+            <div class="dot dotGame"></div>
+            <div class="dot dotGame"></div>
+            <div class="dot dotGame"></div>
+            <div class="dot dotGame"></div>
+            <div class="dot dotGame"></div>
+            <div class="dot dotGame"></div>
+            <div class="dot dotGame"></div>
+            <div class="dot dotGame"></div>
+          </div>
+        </div>
+        <a href="#section5" class="nextButton2 content4" aria-label="to section 5">
+          <span class="next"></span>
+          <span class="next"></span>
+          <span class="next"></span>
+        </a>
+      </section>
+
+
+      <section id="section4">
+        <div class="secPortFrame content3" id="game-category-container">
+        </div>
+
+        <div class="content4 other-cat-container">
+          <div class="catTitle" data-i18n="moreGamesTitle">More Games...</div>
+          <div class="category-skill-other" id="game-category-container-other">
+          </div>
+        </div>
+      </section>
+
+
+      <section id="section5">
+        <div class="sec5Tit content1">
+          
+        </div>
+        <div class="secContact content2" >
+
+        </div>
+
+        <div class="hidden_layer contact_form_wrap" id="contactForm">
+          <div class="contact_form_frame">
+            <button class="close_button" id="closeContactForm" aria-label="close contact form"></button>
+            <div class="contact_form">
+              <input type="text" id="contact_name" value="" data-i18n-placeholder="contactName" placeholder="Name" autocomplete="off">
+              <input type="text" id="contact_email" value="" data-i18n-placeholder="contactEmail" placeholder="Email" autocomplete="off">
+              <input type="text" id="contact_subject" value="" data-i18n-placeholder="contactSubject" placeholder="Subject" autocomplete="off">
+              <textarea rows="6" id="contact_message" value="" data-i18n-placeholder="contactMessage" placeholder="Message" autocomplete="off"></textarea>
+            </div>
+            <p class="contact_form_missing contact_form_hide" data-i18n="contactMissing">Please provide all required information</p>
+            <p class="contact_form_mail_inv contact_form_hide" data-i18n="contactInvalidEmail">Please provide a valid email</p>
+            <p class="contact_form_mail_error contact_form_hide" data-i18n="contactError">Something went wrong, please try again later</p>
+            <p class="contact_form_success contact_form_hide" data-i18n-html="contactSuccess">I've received your mail.<br>Thank you for reaching out.<br>I will reply asap!</p>
+            <button class="secMail" id="contact_form_submit" aria-label="send email">
+              <p data-i18n="contactSend">Send</p>
+              <div class="loading_dots">
+                <span id="loading_dot_1"></span>
+                <span id="loading_dot_2"></span>
+                <span id="loading_dot_3"></span>
+              </div>
+            </button>
+          </div>
+        </div>
+      </section>
+
+    </main>
+    <footer>
+      <div class="copyright">
+        Copyright &copy;
+        <span id="copyright_year">
+          <script>document.getElementById('copyright_year').appendChild(document.createTextNode(new Date().getFullYear()))</script>
+        </span>
+        <span data-i18n="copyright">All Rights Reserved by</span>
+        <a class="copyright_link" href="" target="_blank" aria-label="to linkedin">AIGamopedia</a>
+      </div>
+      <div class="endPage">
+        <button class="sound" id="soundButton" aria-label="toggle sound"></button>
+        <a href="#section1" class="backToTop" aria-label="to section 1"></a>
+      </div>
+      <a href="#section1" class="moveUp" aria-label="scroll to top"></a>
+    </footer>
+  </body>
+</html>

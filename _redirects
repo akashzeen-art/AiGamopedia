@@ -1,0 +1,15 @@
+# AIGamopedia – Netlify rewrites so /ar (Arabic) works
+# 200 = rewrite (serve file, URL stays same)
+
+# Arabic route: serve index.html so JS detects /ar and shows Arabic
+/ar     /index.html   200
+/ar/    /index.html   200
+/ar/index.html    /index.html   200
+
+# Arabic subpages: serve the same HTML files from root
+/ar/moreGames.html    /moreGames.html   200
+/ar/myAccount.html    /myAccount.html   200
+/ar/termsAndConditions.html    /termsAndConditions.html   200
+
+# Arabic assets: /ar/index.js → /index.js, /ar/style.css → /style.css, etc.
+/ar/*   /:splat   200
