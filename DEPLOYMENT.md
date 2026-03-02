@@ -48,10 +48,7 @@ No extra Netlify config needed; just connect the repo and deploy.
 The repo includes **`vercel.json`** so `/ar` (Arabic) works on Vercel (no 404).
 
 1. **Import the project** at [vercel.com/new](https://vercel.com/new): connect your Git repo (e.g. GitHub `akashzeen-art/AiGamopedia`).
-2. **Fix "Not Found":** In **Project Settings → General → Build & Development Settings** set:
-   - **Framework Preset:** `Other` (so Vercel does not treat it as a Node server).
-   - **Build Command:** leave empty, or keep the override from `vercel.json` (`echo 'Static site'`).
-   - **Output Directory:** `.` (dot) so the repo root is served as static files.
+2. **Fix "Not Found":** The repo uses a build script (`scripts/vercel-build.sh`) that copies static files into `.vercel/output/static`. Keep **Framework Preset:** `Other` and leave Build Command / Output Directory as in `vercel.json` (do not override in the dashboard).
 3. **Redeploy** (Deployments → … → Redeploy). Then:
    - **English:** `https://your-project.vercel.app/`
    - **Arabic:** `https://your-project.vercel.app/ar`
