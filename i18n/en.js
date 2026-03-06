@@ -37,7 +37,7 @@ window.I18N_EN = {
   contactError: 'Something went wrong, please try again later',
   contactSuccess: "I've received your mail.<br>Thank you for reaching out.<br>I will reply asap!",
   // Game overlay
-  backToPortal: '← Back to Portal',
+  backToPortal: 'X',
   // Footer
   copyright: 'All Rights Reserved by',
   // More Games page

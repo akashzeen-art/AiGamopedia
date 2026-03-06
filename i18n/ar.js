@@ -37,7 +37,7 @@ window.I18N_AR = {
   contactError: 'حدث خطأ ما، يرجى المحاولة لاحقاً',
   contactSuccess: 'تم استلام رسالتك.<br>شكراً لتواصلك.<br>سأرد في أقرب وقت!',
   // Game overlay
-  backToPortal: '→ العودة إلى البوابة',
+  backToPortal: 'X',
   // Footer
   copyright: 'جميع الحقوق محفوظة لـ',
   // More Games page

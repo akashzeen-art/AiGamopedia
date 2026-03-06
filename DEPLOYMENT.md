@@ -43,17 +43,34 @@ No extra Netlify config needed; just connect the repo and deploy.
 
 ---
 
-## 3. Deploy on Vercel
+## 3. Deploy on Vercel (create project if you don’t see it)
 
 The repo includes **`vercel.json`** so `/ar` (Arabic) works on Vercel (no 404).
 
-1. **Import the project** at [vercel.com/new](https://vercel.com/new): connect your Git repo (e.g. GitHub `akashzeen-art/AiGamopedia`).
-2. **Fix "Not Found":** The repo uses a build script (`scripts/vercel-build.sh`) that copies static files into `.vercel/output/static`. Keep **Framework Preset:** `Other` and leave Build Command / Output Directory as in `vercel.json` (do not override in the dashboard).
-3. **Redeploy** (Deployments → … → Redeploy). Then:
-   - **English:** `https://your-project.vercel.app/`
-   - **Arabic:** `https://your-project.vercel.app/ar`
+### Create / import the project
 
-The `vercel.json` rewrites send `/ar` and `/ar/*` to the correct HTML or static files so the URL stays `/ar`.
+1. Go to **[vercel.com/new](https://vercel.com/new)** and sign in (e.g. with GitHub).
+2. Under **Import Git Repository**, click **Import** next to **`akashzeen-art/AiGamopedia`**.  
+   If it doesn’t appear, click **Adjust GitHub App Permissions** and allow Vercel access to the repo, then try again.
+3. **Configure the project:**
+   - **Project Name:** set to **`ai-gamopedia`** (or any name; this becomes `ai-gamopedia.vercel.app`).
+   - **Framework Preset:** choose **Other** (important – do not use Express/Node).
+   - **Build Command:** leave empty (the repo’s `vercel.json` uses `sh scripts/vercel-build.sh`).
+   - **Output Directory:** leave empty (repo uses `.vercel/output/static`).
+   - **Install Command:** leave empty (repo skips install).
+4. Click **Deploy**. Wait for the build to finish.
+5. Your site will be at:
+   - **English:** `https://ai-gamopedia.vercel.app/` (or the name you chose).
+   - **Arabic:** `https://ai-gamopedia.vercel.app/ar`
+
+### If the project already exists but you can’t find it
+
+- In the Vercel dashboard, check **All** projects or use the search box for **aigamopedia** or **AiGamopedia**.
+- Or go to **[vercel.com/new](https://vercel.com/new)** and import **`akashzeen-art/AiGamopedia`** again; Vercel will ask whether to add to an existing project or create a new one.
+
+### If you get “Not Found” after deploy
+
+In **Project → Settings → General → Build & Development Settings**, set **Framework Preset** to **Other** and **Override** so that Build Command and Output Directory come from `vercel.json`. Then **Redeploy** from the Deployments tab.
 
 ---
 
