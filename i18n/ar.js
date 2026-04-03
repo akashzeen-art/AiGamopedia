@@ -59,7 +59,7 @@ window.I18N_AR = {
   tc3: 'المحتويات متوافقة مع جميع الأجهزة.',
   tc4: 'لاستخدام هذه الخدمة، يجب أن يكون عمرك أكثر من 18 عاماً أو أنك حصلت على موافقة والديك أو الشخص المخوّل بدفع فاتورة جوالك.',
   tc5: 'لإلغاء الاشتراك في الخدمة سجّل الدخول إلى حسابي وانقر على إلغاء الاشتراك.',
-  // Category labels (for dynamic sections in index.js)
+  // Category labels (for dynamic sections in main.js)
   categoryTop10: 'أفضل 10 ألعاب',
   categoryVIP: 'ألعاب VIP',
   categoryLeaderboard: 'ألعاب ذات لوحة متصدرين',

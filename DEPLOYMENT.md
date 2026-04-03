@@ -50,7 +50,7 @@ The repo includes **`vercel.json`** so `/ar` (Arabic) works on Vercel (no 404).
 ### Create / import the project
 
 1. Go to **[vercel.com/new](https://vercel.com/new)** and sign in (e.g. with GitHub).
-2. Under **Import Git Repository**, click **Import** next to **`akashzeen-art/AiGamopedia`**.  
+2. Under **Import Git Repository**, click **Import** next to **`akashzeen-art/AIGamopedia`**.  
    If it doesn’t appear, click **Adjust GitHub App Permissions** and allow Vercel access to the repo, then try again.
 3. **Configure the project:**
    - **Project Name:** set to **`ai-gamopedia`** (or any name; this becomes `ai-gamopedia.vercel.app`).
@@ -65,8 +65,8 @@ The repo includes **`vercel.json`** so `/ar` (Arabic) works on Vercel (no 404).
 
 ### If the project already exists but you can’t find it
 
-- In the Vercel dashboard, check **All** projects or use the search box for **aigamopedia** or **AiGamopedia**.
-- Or go to **[vercel.com/new](https://vercel.com/new)** and import **`akashzeen-art/AiGamopedia`** again; Vercel will ask whether to add to an existing project or create a new one.
+- In the Vercel dashboard, check **All** projects or use the search box for **AIGamopedia** or **AIGamopedia**.
+- Or go to **[vercel.com/new](https://vercel.com/new)** and import **`akashzeen-art/AIGamopedia`** again; Vercel will ask whether to add to an existing project or create a new one.
 
 ### If you get “Not Found” after deploy
 
@@ -88,8 +88,8 @@ If you **don’t** use this Node server and instead serve the built files (e.g. 
 | `/ar/moreGames.html` | Serve `moreGames.html` |
 | `/ar/myAccount.html` | Serve `myAccount.html` |
 | `/ar/termsAndConditions.html` | Serve `termsAndConditions.html` |
-| `/ar/<any file>` (e.g. `/ar/index.js`, `/ar/style.css`, `/ar/images/...`) | Serve the same file from project root (e.g. `index.js`, `style.css`, `images/...`) |
-| All other static files at root | Serve normally (e.g. `index.js`, `style.css`, `images/`, `i18n/`, etc.) |
+| `/ar/<any file>` (e.g. `/ar/main.js`, `/ar/style.css`, `/ar/images/...`) | Serve the same file from project root (e.g. `main.js`, `style.css`, `images/...`) |
+| All other static files at root | Serve normally (e.g. `main.js`, `style.css`, `images/`, `i18n/`, etc.) |
 
 So: **under `/ar`, map “virtual” paths to the same physical files as at root** (only the HTML routes above are special; the rest are static files).
 
@@ -104,7 +104,7 @@ Deploy the whole project **except** `node_modules` (and any `.env` if you add it
 - `server.js` – Express app
 - `package.json` + `package-lock.json`
 - `index.html`, `moreGames.html`, `myAccount.html`, `termsAndConditions.html`
-- `index.js`, `moreGames.js`, `i18n.js`
+- `main.js`, `moreGames.js`, `i18n.js`
 - `i18n/` (en.js, ar.js)
 - `style.css`
 - `images/`, `icons/`, `audios/` (and any other assets)

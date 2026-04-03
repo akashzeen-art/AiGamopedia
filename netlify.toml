@@ -34,7 +34,7 @@
   to = "/termsAndConditions.html"
   status = 200
 
-# /ar/* assets (index.js, style.css, images/...) → serve from root
+# /ar/* assets (main.js, style.css, images/...) → serve from root
 [[redirects]]
   from = "/ar/*"
   to = "/:splat"

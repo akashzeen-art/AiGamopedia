@@ -1,5 +1,5 @@
-import * as THREE from "https://cdn.skypack.dev/three@0.148.0";
-import openSimplexNoise from 'https://cdn.skypack.dev/open-simplex-noise';
+import * as THREE from "https://cdn.jsdelivr.net/npm/three@0.148.0/build/three.module.js";
+import openSimplexNoise from "https://esm.sh/open-simplex-noise@2.5.0";
 
 //VARIABLES
 const sizes = {

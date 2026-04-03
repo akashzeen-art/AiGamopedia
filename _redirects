@@ -11,5 +11,5 @@
 /ar/myAccount.html    /myAccount.html   200
 /ar/termsAndConditions.html    /termsAndConditions.html   200
 
-# Arabic assets: /ar/index.js → /index.js, /ar/style.css → /style.css, etc.
+# Arabic assets: /ar/main.js → /main.js, /ar/style.css → /style.css, etc.
 /ar/*   /:splat   200

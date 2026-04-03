@@ -17,7 +17,7 @@ arRoutes.get('/index.html', sendHtml('index.html'));
 arRoutes.get('/moreGames.html', sendHtml('moreGames.html'));
 arRoutes.get('/myAccount.html', sendHtml('myAccount.html'));
 arRoutes.get('/termsAndConditions.html', sendHtml('termsAndConditions.html'));
-// Static assets under /ar (e.g. /ar/index.js, /ar/style.css)
+// Static assets under /ar (e.g. /ar/main.js, /ar/style.css)
 arRoutes.use(express.static(root));
 
 app.get(BASE_PATH + '/ar', sendHtml('index.html'));

@@ -1,8 +1,7 @@
 {
-  "name": "aigamopedia",
+  "name": "AIGamopedia",
   "version": "1.0.0",
   "description": "AIGamopedia - Game portal with EN/AR support",
-  "main": "server.js",
   "engines": {
     "node": ">=16.x"
   },

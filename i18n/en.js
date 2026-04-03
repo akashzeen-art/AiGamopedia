@@ -59,7 +59,7 @@ window.I18N_EN = {
   tc3: 'Contents are compatible with all handsets.',
   tc4: 'To make use of this service, one must be more than 18 years old or have received permission from your parents or person who is authorized to pay your mobile bill.',
   tc5: 'To unsubscribe the Service log into my account and click on unsubscribe.',
-  // Category labels (for dynamic sections in index.js)
+  // Category labels (for dynamic sections in main.js)
   categoryTop10: 'Top 10 Games',
   categoryVIP: 'VIP Games',
   categoryLeaderboard: 'Games With Leaderboard',
